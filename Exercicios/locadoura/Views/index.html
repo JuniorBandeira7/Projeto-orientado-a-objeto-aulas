@@ -1,0 +1,38 @@
+<script>
+class Carro {
+    constructor(marca, modelo, placa, disponivel = true) {
+        this.marca = marca
+        this.modelo = modelo
+        this.placa = placa
+        this.disponivel = disponivel
+        this.historicoDeClientes = []
+    }
+
+    getInformacoes(){
+        informacoes = [this.marca, this.modelo, this.placa, this.disponivel]
+
+        return informacoes
+    }
+
+    alugar(cliente, dataAluguel){
+        this.disponivel = false
+        this.historicoDeClientes.push({
+            status: 'Alugou',
+            cliente: cliente,
+            data: dataAluguel
+        });
+        
+        return
+    }
+}
+
+const carro = new Carro(1,1,1,true)
+
+const date = new Date()
+
+
+carro.alugar("jorge", date)
+
+console.log(carro.historicoDeClientes)
+
+</script>
