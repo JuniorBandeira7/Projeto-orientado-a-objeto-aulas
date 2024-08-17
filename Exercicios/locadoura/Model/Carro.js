@@ -15,6 +15,7 @@ class Carro {
 
     alugar(cliente, dataAluguel){
         this.disponivel = false
+
         this.historicoDeClientes.push({
             status: 'Alugou',
             cliente: cliente,
@@ -25,7 +26,8 @@ class Carro {
     }
 
     devolver(cliente, dataDevolucao){
-        this.disponivel = false
+        this.disponivel = true
+
         this.historicoDeClientes.push({
             status: 'Devolveu',
             cliente: cliente,
