@@ -1,16 +1,19 @@
+import Carro from "./Carro.js"
+import Cliente from "./Cliente.js"
+
 class Locadora {
     constructor() {
-        this.carros = []
-        this.clientes = []
+        this.carros = {}
+        this.clientes = {}
     }
 
-    addCarro(carro){
-        this.carros.push(carro)
+    addCarro(marca, modelo, placa, disponivel){
+        this.carros[placa] = new Carro(marca, modelo, placa, disponivel);
         return
     }
 
-    addCliente(cliente){
-        this.clientes.push(cliente)
+    addCliente(nome, cpf){
+        this.clientes[cpf] = new Cliente(nome, cpf);
         return
     }
 

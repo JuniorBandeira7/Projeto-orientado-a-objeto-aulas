@@ -7,7 +7,7 @@ class Cliente {
     }
 
     getInformacoes(){
-        informacoes = [this.nome, this.cpf]
+        let informacoes = [this.nome, this.cpf]
 
         return informacoes
     }

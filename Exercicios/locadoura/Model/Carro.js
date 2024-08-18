@@ -8,7 +8,7 @@ class Carro {
     }
 
     getInformacoes(){
-        informacoes = [this.marca, this.modelo, this.placa, this.disponivel]
+        let informacoes = [this.marca, this.modelo, this.placa, this.disponivel]
 
         return informacoes
     }

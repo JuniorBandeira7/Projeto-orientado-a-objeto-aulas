@@ -1,38 +1,46 @@
-<script>
-class Carro {
-    constructor(marca, modelo, placa, disponivel = true) {
-        this.marca = marca
-        this.modelo = modelo
-        this.placa = placa
-        this.disponivel = disponivel
-        this.historicoDeClientes = []
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locadora de Carros</title>
+    <link rel="stylesheet" href="../public/css/styles.css">
+</head>
+<body>
+    <h1>Criar Novo Carro</h1>
+    <form id="carroForm">
+        <label for="marca">Marca:</label>
+        <input type="text" id="marca" name="marca" required><br><br>
 
-    getInformacoes(){
-        informacoes = [this.marca, this.modelo, this.placa, this.disponivel]
+        <label for="modelo">Modelo:</label>
+        <input type="text" id="modelo" name="modelo" required><br><br>
 
-        return informacoes
-    }
+        <label for="placa">Placa:</label>
+        <input type="text" id="placa" name="placa" required><br><br>
 
-    alugar(cliente, dataAluguel){
-        this.disponivel = false
-        this.historicoDeClientes.push({
-            status: 'Alugou',
-            cliente: cliente,
-            data: dataAluguel
-        });
-        
-        return
-    }
-}
+        <label for="disponivel">Disponível:</label>
+        <input type="checkbox" id="disponivel" name="disponivel" checked><br><br>
 
-const carro = new Carro(1,1,1,true)
+        <button type="submit">Criar Carro</button>
+    </form>
 
-const date = new Date()
+    <h2>Lista de Carros</h2>
+    <ul id="listaCarros"></ul>
 
+    <h1>Criar Novo Cliente</h1>
+    <form id="clienteForm">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required><br><br>
 
-carro.alugar("jorge", date)
+        <label for="cpf">CPF:</label>
+        <input type="text" id="cpf" name="cpf" required><br><br>
 
-console.log(carro.historicoDeClientes)
+        <button type="submit">Criar Cliente</button>
+    </form>
 
-</script>
+    <h2>Lista de Clientes</h2>
+    <ul id="listaClientes"></ul>
+
+    <script type="module" src="../app.js"></script>
+</body>
+</html>
