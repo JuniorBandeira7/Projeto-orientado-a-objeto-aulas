@@ -18,7 +18,7 @@ class Carro {
 
         this.historicoDeClientes.push({
             status: 'Alugou',
-            cliente: cliente,
+            cliente: cliente.nome,
             data: dataAluguel
         });
         
@@ -30,7 +30,7 @@ class Carro {
 
         this.historicoDeClientes.push({
             status: 'Devolveu',
-            cliente: cliente,
+            cliente: cliente.nome,
             data: dataDevolucao
         });
 

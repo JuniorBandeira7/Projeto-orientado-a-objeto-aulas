@@ -91,24 +91,48 @@ function devolverCarro(carro) {
     }
 }
 
-// ------------------------------------------------------------------------------------------- TERMINAR AQUI DPS ------------------------------------------------------------------------
+
 function getInformacoesCarro(carro){
-    console.log(carro.getInformacoes())
+    let informacoes = carro.getInformacoes()
+
+    let marca = informacoes[0]
+    let modelo = informacoes[1]
+    let placa = informacoes[2]
+    let disponivel = informacoes[3]
+
+    if(disponivel) {
+        disponivel = "Sim"
+    } else {
+        disponivel = "Não"
+    }
+
+    alert(`Marca: ${marca}.\n\nModelo: ${modelo}.\n\nPlaca: ${placa}.\n\nDisponível? ${disponivel}.`)
 }
 
 function getInformacoesCliente(cliente){
-    console.log(cliente.getInformacoes())
+    let informacoes = cliente.getInformacoes()
+
+    let nome = informacoes[0]
+    let cpf = informacoes[1]
+
+    alert(`Nome: ${nome}.\n\nCPF: ${cpf}.`)
 }
 
 function listarHistorico(carro){
-    console.log(carro.listarHistorico())
+    let objetos = carro.listarHistorico()
+    let mensagem = objetos.map((obj, index) => `Status: ${obj.status}\nCliente: ${obj.cliente}\nData: ${obj.data}`).join('\n\n');
+    
+    alert(mensagem)
 }
 
 function carrosAlugados(cliente){
-    console.log(cliente.listarCarrosAlugados())
+    let objetos = cliente.listarCarrosAlugados()
+    let mensagem = objetos.map((obj, index) => `Status: ${obj.status}\nPlaca: ${obj.placa}\nData: ${obj.data}`).join('\n\n');
+    
+    alert(mensagem)
 }
 
-// ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 // Capturando o formulário de carro e adicionando um listener de evento
 document.getElementById('carroForm').addEventListener('submit', function(event) {

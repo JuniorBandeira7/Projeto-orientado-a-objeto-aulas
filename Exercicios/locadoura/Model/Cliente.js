@@ -17,7 +17,7 @@ class Cliente {
 
         this.carrosAlugados.push({
             status: 'Alugou',
-            nome: carro,
+            placa: carro.placa,
             data: dataAluguel
         });
         
@@ -27,9 +27,11 @@ class Cliente {
     devolverCarro(carro){
         this.disponivel = false
 
-        const indiceCarro = this.carrosAlugados.findIndex(carro.placa)
+        const indiceCarro = this.carrosAlugados.findIndex(carroAlugado => carroAlugado.placa === carro.placa)
 
-        this.carrosAlugados.splice(indiceCarro, 1)
+        if (indiceCarro !== -1) {
+            this.carrosAlugados.splice(indiceCarro, 1);
+        }
 
         return
     }
